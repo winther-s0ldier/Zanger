@@ -46,7 +46,7 @@ const ClientsTable = () => {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:3030/api/clients?user=${loggedInUserName.user.email}`
+        `https://first-work-2.onrender.com/api/clients?user=${loggedInUserName.user.email}`
       )
       .then(async (res) => {
         setTableData(res.data);
@@ -138,7 +138,7 @@ const ClientsTable = () => {
             onAdd={async (newClient) => {
               newClient.created_by = loggedInUserName;
               await axios.post(
-                `http://localhost:3030/api/clients/add`,
+                `https://first-work-2.onrender.com/api/clients/add`,
                 newClient
               );
               setTableData([...tableData, newClient]);
