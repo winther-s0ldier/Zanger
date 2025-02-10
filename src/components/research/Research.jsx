@@ -40,7 +40,7 @@ function Research() {
   const handleDeleteTask = async (taskId) => {
     try {
       const response = await fetch(
-       'https://first-work-2.onrender.com/api/tasks/${taskId}`,
+       `https://first-work-2.onrender.com/api/tasks/${taskId}`,
         {
           method: "DELETE",
           headers: {
