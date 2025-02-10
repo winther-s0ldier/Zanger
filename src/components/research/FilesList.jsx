@@ -9,7 +9,7 @@ function FilesList() {
 
   const fetchFiles = async () => {
     try {
-      const response = await fetch('http://localhost:3030/api/files', {
+      const response = await fetch('https://first-work-2.onrender.com/api/files', {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
@@ -30,7 +30,7 @@ function FilesList() {
 
   const handleDelete = async (fileId) => {
     try {
-      const response = await fetch(`http://localhost:3030/api/files/${fileId}`, {
+      const response = await fetch(`https://first-work-2.onrender.com/api/files/${fileId}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${user.token}`,
@@ -88,7 +88,7 @@ function FilesList() {
                       </span>
                       <button
                         className="btn btn-sm btn-outline-primary me-2"
-                        onClick={() => window.open(`http://localhost:3030/uploads/${file.path}`)}
+                        onClick={() => window.open(`https://first-work-2.onrender.com/uploads/${file.path}`)}
                       >
                         Open
                       </button>
