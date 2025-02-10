@@ -21,7 +21,7 @@ const EditClientModal = ({ client, onClose, onUpdate }) => {
     e.preventDefault();
     try {
       const updatedClient = await axios.put(
-        `http://localhost:3030/api/clients/update/${client.id}`,
+        `https://first-work-2.onrender.com/api/clients/update/${client.id}`,
         formData
       );
       onUpdate(updatedClient.data); // Inform parent to update the table
