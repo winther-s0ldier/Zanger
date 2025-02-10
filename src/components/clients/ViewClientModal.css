@@ -1,0 +1,72 @@
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%; /* Ensures responsive width */
+  max-width: 600px; /* Sets maximum width */
+  box-sizing: border-box; /* Includes padding in width calculation */
+  display: flex; /* Flexbox layout for content */
+  flex-direction: column; /* Aligns content vertically */
+  justify-content: center; /* Centers content vertically */
+  align-items: center; /* Centers content horizontally */
+}
+
+/* Modal Header */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.modal-title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Modal Body */
+.modal-body {
+  margin-top: 20px;
+  width: 100%;
+  text-align: left; /* Align the text left */
+}
+
+/* Modal Footer (if you have any footer buttons) */
+.modal-footer {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.btn-close {
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-close:hover {
+  background-color: #0056b3;
+}
