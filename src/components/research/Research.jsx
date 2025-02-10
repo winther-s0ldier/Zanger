@@ -40,7 +40,7 @@ function Research() {
   const handleDeleteTask = async (taskId) => {
     try {
       const response = await fetch(
-        `http://localhost:3030/api/tasks/${taskId}`,
+       'https://first-work-2.onrender.com/api/tasks/${taskId}`,
         {
           method: "DELETE",
           headers: {
@@ -61,7 +61,7 @@ function Research() {
   const handleDeleteUpdate = async (updateId) => {
     try {
       const response = await fetch(
-        `http://localhost:3030/api/updates/${updateId}`,
+        `https://first-work-2.onrender.com/api/updates/${updateId}`,
         {
           method: "DELETE",
           headers: {
@@ -83,7 +83,7 @@ function Research() {
   // Fetch priority tasks
   const fetchPriorityTasks = async () => {
     try {
-      const response = await fetch("http://localhost:3030/api/tasks", {
+      const response = await fetch("https://first-work-2.onrender.com/api/tasks", {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
@@ -106,7 +106,7 @@ function Research() {
     formData.append("file", file);
 
     try {
-      const response = await fetch("http://localhost:3030/api/upload", {
+      const response = await fetch("https://first-work-2.onrender.com/api/upload", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${user.token}`,
@@ -138,7 +138,7 @@ function Research() {
 
     try {
       const response = await fetch(
-        `http://localhost:3030/api/updates/recent?email=${loggedinuser.user.email}`,
+        `https://first-work-2.onrender.com/api/updates/recent?email=${loggedinuser.user.email}`,
         {
           headers: {
             Authorization: `Bearer ${loggedinuser.token}`,
@@ -157,7 +157,7 @@ function Research() {
   // Handle adding new task
   const handleAddTask = async (taskData) => {
     try {
-      const response = await fetch("http://localhost:3030/api/tasks", {
+      const response = await fetch("https://first-work-2.onrender.com/api/tasks", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -193,7 +193,7 @@ function Research() {
 
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:3030/api/search", {
+      const response = await fetch("https://first-work-2.onrender.com/api/search", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
