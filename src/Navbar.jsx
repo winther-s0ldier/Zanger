@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   const { user, logout } = useAuth();
+  const loggedInUserName = JSON.parse(localStorage.getItem("user"));
   const navigate = useNavigate();
   const [activeLink, setActiveLink] = useState(""); // Track the active link
 
@@ -221,7 +222,7 @@ function Navbar() {
                 }}
               >
                 <img
-                  src={user.profilePic || "https://via.placeholder.com/40"} 
+                  src={loggedInUserName.user.profilePic || "https://via.placeholder.com/40"} 
                   alt="Profile"
                   className="rounded-circle "
                   style={{
