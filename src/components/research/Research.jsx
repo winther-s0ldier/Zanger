@@ -555,7 +555,7 @@ function Research() {
                                     onClick={() => {
                                       if (result.type === "File") {
                                         window.open(
-                                          `http://localhost:3030/uploads/${result.path}`
+                                          `https://first-work-2.onrender.com/uploads/${result.path}`
                                         );
                                       } else if (
                                         result.type === "Web" &&
