@@ -21,7 +21,7 @@ const CalendarView = () => {
   const fetchEvents = async () => {
     try {
       console.log('Fetching events...');
-      const response = await axios.get("http://localhost:3030/api/calendar", {
+      const response = await axios.get("https://first-work-2.onrender.com/api/calendar", {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
@@ -41,7 +41,7 @@ const CalendarView = () => {
       console.log('Attempting to create event with data:', eventData);
       
       const response = await axios.post(
-        "http://localhost:3030/api/calendar",
+        "https://first-work-2.onrender.com/api/calendar",
         eventData,
         {
           headers: {
@@ -65,7 +65,7 @@ const CalendarView = () => {
 
   const handleDelete = async (eventId) => {
     try {
-      await axios.delete(`http://localhost:3030/api/calendar/${eventId}`, {
+      await axios.delete(`https://first-work-2.onrender.com/api/calendar/${eventId}`, {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
@@ -80,7 +80,7 @@ const CalendarView = () => {
   const handleGoogleSync = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:3030/api/auth/google/calendar/url",
+        "https://first-work-2.onrender.com/api/auth/google/calendar/url",
         {},
         {
           headers: {
