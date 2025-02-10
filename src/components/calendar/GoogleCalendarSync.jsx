@@ -12,7 +12,7 @@ const GoogleCalendarSync = ({ onClose, onSync }) => {
         setSyncing(true);
         setError(null);
         try {
-            const response = await axios.get('http://localhost:3030/api/calendar/google/auth', {
+            const response = await axios.get('https://first-work-2.onrender.com/api/calendar/google/auth', {
                 headers: {
                     Authorization: `Bearer ${user.token}`
                 }
@@ -32,7 +32,7 @@ const GoogleCalendarSync = ({ onClose, onSync }) => {
         setSyncing(true);
         setError(null);
         try {
-            await axios.post('http://localhost:3030/api/calendar/google/disable', {}, {
+            await axios.post('https://first-work-2.onrender.com/api/calendar/google/disable', {}, {
                 headers: {
                     Authorization: `Bearer ${user.token}`
                 }
