@@ -18,7 +18,7 @@ const ClientActions = ({ client, onEdit, onDelete }) => {
   const handleDelete = () => {
     if (window.confirm("Are you sure you want to delete this client?")) {
       axios
-        .delete(`http://localhost:3030/api/clients/delete/${client.id}`)
+        .delete(`https://first-work-2.onrender.com/api/clients/delete/${client.id}`)
         .then(() => {
           onDelete(client.id);
         })
