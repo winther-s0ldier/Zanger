@@ -10,7 +10,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3030/data?username=${loggedInUserName.user.email}`)
+      .get(`https://first-work-2.onrender.com/data?username=${loggedInUserName.user.email}`)
       .then((res) => {
         setnotes(res.data);
         setcurrentnote(res.data[0] || null);
@@ -43,7 +43,7 @@ function App() {
                     author: loggedInUserName.user.email,
                   };
 
-                  await axios.post(`http://localhost:3030/add`, newNote);
+                  await axios.post(`https://first-work-2.onrender.com/add`, newNote);
 
                   setnotes([...notes, newNote]);
                   setcurrentnote(newNote);
@@ -81,7 +81,7 @@ function App() {
                         setnotes(notes.filter((n) => n.id !== note.id));
                         setcurrentnote(null);
                         await axios.delete(
-                          `http://localhost:3030/delete/${note.id}`,
+                          `https://first-work-2.onrender.com/delete/${note.id}`,
                           currnote
                         );
                       }}
@@ -121,7 +121,7 @@ function App() {
                         )
                       );
                       await axios.put(
-                        `http://localhost:3030/update/${currnote.id}`,
+                        `https://first-work-2.onrender.com/update/${currnote.id}`,
                         currnote
                       );
                     }
@@ -166,7 +166,7 @@ function App() {
                       )
                     );
                     await axios.put(
-                      `http://localhost:3030/update/${currnote.id}`,
+                      `https://first-work-2.onrender.com/update/${currnote.id}`,
                       currnote
                     );
                   }
