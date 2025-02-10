@@ -9,7 +9,7 @@ function FilesList() {
 
   const fetchFiles = async () => {
     try {
-      const response = await fetch('https://first-work-2.onrender.com/api/files', {
+      const response = await fetch("https://first-work-2.onrender.com/api/files", {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
