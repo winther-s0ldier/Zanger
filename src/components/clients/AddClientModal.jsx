@@ -9,7 +9,7 @@ const AddClientModal = ({ onClose, onAdd }) => {
     caseType: "",
     status: "Active",
     lastContact: new Date().toLocaleDateString(),
-    created_by:loggedInUserName.user
+    created_by:loggedInUserName.user.email
   });
 
   const handleSubmit = async (e) => {
@@ -27,6 +27,7 @@ const AddClientModal = ({ onClose, onAdd }) => {
         caseType: "",
         status: "Active",
         lastContact: new Date().toLocaleDateString(),
+        created_by:loggedInUserName.user.email
       });
       onClose(); // Close modal after adding client
     } catch (error) {
