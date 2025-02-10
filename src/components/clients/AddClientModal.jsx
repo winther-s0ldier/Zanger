@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios"; // Import axios
 import "./AddClientModal.css";
 
 const AddClientModal = ({ onClose, onAdd }) => {
@@ -9,19 +10,27 @@ const AddClientModal = ({ onClose, onAdd }) => {
     lastContact: new Date().toLocaleDateString(),
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const newClient = {
-      ...formData,
-      id: Date.now(), // Generate unique ID
-    };
-    onAdd(newClient);
-    setFormData({
-      name: "",
-      caseType: "",
-      status: "Active",
-      lastContact: new Date().toLocaleDateString(),
-    });
+
+    try {
+      const response = await axios.post(
+        "https://first-work-2.onrender.com/api/clients/add", // Replace with actual API endpoint
+        formData
+      );
+
+      onAdd(response.data); // Update parent component with new client
+      setFormData({
+        name: "",
+        caseType: "",
+        status: "Active",
+        lastContact: new Date().toLocaleDateString(),
+      });
+      onClose(); // Close modal after adding client
+    } catch (error) {
+      console.error("Error adding client:", error);
+      alert("Failed to add client.");
+    }
   };
 
   return (
