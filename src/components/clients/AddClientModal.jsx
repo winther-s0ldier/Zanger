@@ -3,11 +3,13 @@ import axios from "axios"; // Import axios
 import "./AddClientModal.css";
 
 const AddClientModal = ({ onClose, onAdd }) => {
+  const loggedInUserName = JSON.parse(localStorage.getItem("user"));  
   const [formData, setFormData] = useState({
     name: "",
     caseType: "",
     status: "Active",
     lastContact: new Date().toLocaleDateString(),
+    created_by:loggedInUserName.user
   });
 
   const handleSubmit = async (e) => {
