@@ -27,7 +27,7 @@ const EmailDashboard = () => {
 
   const fetchEmails = async () => {
     try {
-      const response = await fetch(`http://localhost:3030/api/emails/${currentFolder}`, {
+      const response = await fetch(`https://first-work-2.onrender.com/api/emails/${currentFolder}`, {
         headers: {
           'Authorization': `Bearer ${user?.token}`,
           'X-Google-Token': user?.googleToken,
@@ -54,7 +54,7 @@ const EmailDashboard = () => {
     e.preventDefault();
     setError('');
     try {
-      const response = await fetch('http://localhost:3030/api/emails/send', {
+      const response = await fetch('https://first-work-2.onrender.com/api/emails/send', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
