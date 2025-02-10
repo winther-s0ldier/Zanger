@@ -138,7 +138,7 @@ const ClientsTable = () => {
             onAdd={async (newClient) => {
               newClient.created_by = loggedInUserName;
               await axios.post(
-                `https://first-work-2.onrender.com/api/clients/add`,
+                "https://first-work-2.onrender.com/api/clients/add",
                 newClient
               );
               setTableData([...tableData, newClient]);
