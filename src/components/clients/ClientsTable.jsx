@@ -136,7 +136,7 @@ const ClientsTable = () => {
           <AddClientModal
             onClose={() => setModalOpen(false)}
             onAdd={async (newClient) => {
-              newClient.created_by = loggedInUserName;
+              newClient.created_by = loggedInUserName.user.email;
               await axios.post(
                 "https://first-work-2.onrender.com/api/clients/add",
                 newClient
