@@ -43,7 +43,7 @@ function App() {
                     author: loggedInUserName.user.email,
                   };
 
-                  await axios.post(`https://first-work-2.onrender.com/add`, newNote);
+                  await axios.post("https://first-work-2.onrender.com/add", newNote);
 
                   setnotes([...notes, newNote]);
                   setcurrentnote(newNote);
