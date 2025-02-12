@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import "./template.css";
 export default function Template() {
   let [data, setdata] = useState([
     {
@@ -45,20 +45,19 @@ export default function Template() {
 
   return (
     <div style={{ paddingLeft: "5rem", paddingRight: "5rem" }}>
-      <div className="container ">
+      <div className="container">
         <div className="row">
           <div
-            className="col-3 mt-5  border p-1  "
+            className="col-3 mt-5 border p-1"
             style={{
               borderRadius: "1.2rem",
               width: "17rem",
-              marginLeft: "0rem",
               height: "23rem",
               boxShadow: "0 4px 15px rgba(128, 128, 128, 0.1)",
               backgroundColor: "white",
             }}
           >
-            <div className="p-6 pt-0 p-4  ">
+            <div className="p-6 pt-0 p-4">
               <h5 className="font-medium text-gray-900 mb-4 border-bottom p-2">
                 Template Type
               </h5>
@@ -77,10 +76,9 @@ export default function Template() {
             </div>
           </div>
           <div
-            className="col-9 border "
+            className="col-9 mt-5 border"
             style={{
               marginLeft: "3rem",
-              marginTop: "3rem",
               height: "25rem",
               borderRadius: "1rem",
               boxShadow: "0 4px 15px rgba(128, 128, 128, 0.1)",
@@ -88,12 +86,12 @@ export default function Template() {
             }}
           >
             <div
-              className="mt-3 border-bottom p-3 "
+              className="mt-3 border-bottom p-3"
               style={{ marginLeft: "2rem" }}
             >
               <h6>Template Generator</h6>
               <p className="text-muted">AI-assisted document generation</p>
-              <div style={{ marginLeft: "43rem", marginTop: "-3rem" }}>
+              <div style={{ marginLeft: "70%", marginTop: "-3rem" }}>
                 <button type="button" className="btn btn-primary">
                   Preview
                 </button>
@@ -106,7 +104,7 @@ export default function Template() {
                 </button>
               </div>
             </div>
-            <div>
+            <div className="mt-4">
               <textarea
                 value={currtemplate?.content || ""}
                 onChange={(e) =>
@@ -125,12 +123,14 @@ export default function Template() {
                   }
                 }}
                 style={{
-                  marginTop: "2rem",
                   height: "14rem",
-                  width: "55rem",
-                  marginLeft: "2.7rem",
+                  width: "50rem",
+                  marginLeft: "5rem",
+
                   borderRadius: "0.5rem",
                   borderColor: "gray",
+
+                  resize: "vertical",
                 }}
               ></textarea>
             </div>
