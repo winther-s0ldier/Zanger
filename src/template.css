@@ -1,0 +1,58 @@
+/* Resize and center input and textarea */
+
+/* When max-width is 1440px */
+@media (max-width: 1440px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .col-9 {
+    width: 80%;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  /* Center and adjust the width of the textarea */
+  textarea {
+    margin-left: 0;
+    width: 100%; /* Full width for better responsiveness */
+    max-width: 500px; /* Limit width for larger screens */
+  }
+
+  /* Center the buttons and arrange them in a column with spacing */
+  .button {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    gap: 1rem; /* Add spacing between the buttons */
+    margin-top: 1rem; /* Add spacing above the buttons */
+  }
+
+  .button button {
+    width: 150px; /* Set a fixed width for buttons */
+    padding: 10px; /* Add padding to buttons */
+  }
+}
+
+/* For smaller devices (max-width: 768px) */
+@media (max-width: 768px) {
+  .col-9 {
+    width: 95%;
+  }
+
+  textarea {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .button {
+    gap: 0.5rem; /* Less spacing between buttons on smaller screens */
+  }
+
+  .button button {
+    width: 100%; /* Make buttons take full width */
+  }
+}
