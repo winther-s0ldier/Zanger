@@ -1,7 +1,6 @@
 .mb-3 {
-  margin-left: 10%;
-
-  width: 80%;
+  width: 90%;
+  margin-left: 5%;
 }
 
 /* When max-width is 1440px */
@@ -29,8 +28,8 @@
   }
 
   .col-9 {
-    width: 8%; /* Adjust the width of the content */
-    padding: 1rem;
+    width: 50%; /* Adjust the width of the content */
+
     display: flex;
     justify-content: center; /* Center main content */
     flex-direction: column; /* Stack the content */
@@ -66,8 +65,8 @@
     cursor: pointer;
   }
   .mb-3 {
-    margin-left: 28%;
     width: 100%;
+    margin-left: 26%;
   }
 }
 
