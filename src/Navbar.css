@@ -1,0 +1,76 @@
+/* Make navbar collapse at 1440px */
+@media (max-width: 1440px) {
+  /* Hide the navbar items initially */
+  .navbar-expand-lg .navbar-collapse {
+    display: none !important;
+  }
+
+  /* Show the navbar toggler button */
+  .navbar-expand-lg .navbar-toggler {
+    display: block !important;
+  }
+
+  /* Display navbar items when toggler button is clicked */
+  .navbar-collapse.show {
+    display: block !important;
+    position: absolute;
+    top: 4.3rem; /* Below the navbar */
+    left: 0;
+    width: 100%;
+    background: white;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Center navbar items */
+  .navbar-nav {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    justify-content: center; /* Add this to center items */
+    align-items: center; /* Add this to center items */
+  }
+
+  /* Space out the items */
+  .navbar-nav .nav-item {
+    margin: 10px 0;
+    position: relative;
+  }
+
+  /* Make sure the dropdown items appear correctly */
+  .navbar-nav .nav-item .dropdown-menu {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    display: none; /* Initially hidden */
+    z-index: 100;
+  }
+
+  /* Show dropdown on hover or when toggled */
+  .navbar-nav .nav-item:hover .dropdown-menu,
+  .navbar-nav .nav-item.show .dropdown-menu {
+    display: block;
+  }
+
+  /* Add dropdown icon to items */
+  .navbar-nav .nav-item .dropdown-toggle::after {
+    content: " ▼";
+    font-size: 0.8rem;
+  }
+
+  /* Styling for dropdown items */
+  .dropdown-menu .dropdown-item {
+    padding: 10px 20px;
+    text-align: left;
+  }
+
+  /* Hover effect for dropdown items */
+  .navbar-nav .nav-item .dropdown-menu .dropdown-item:hover {
+    background-color: #f1f1f1;
+  }
+}
