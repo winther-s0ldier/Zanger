@@ -146,8 +146,8 @@ function App() {
               <textarea
                 className="mb-3"
                 style={{
-                  width: "51rem",
-                  marginLeft: "3rem",
+                  width: "90%",
+
                   height: "15rem",
                   borderColor: "gray",
 
