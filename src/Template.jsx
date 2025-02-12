@@ -124,7 +124,7 @@ export default function Template() {
                 }}
                 style={{
                   height: "14rem",
-                  width: "50rem",
+                  width: "80%",
                   marginLeft: "5rem",
 
                   borderRadius: "0.5rem",
