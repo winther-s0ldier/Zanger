@@ -2,10 +2,10 @@ import { useState } from "react";
 import { useAuth } from "./context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import "./Navbar.css";
 
 function Navbar() {
   const { user, logout } = useAuth();
-  const loggedInUserName = JSON.parse(localStorage.getItem("user"));
   const navigate = useNavigate();
   const [activeLink, setActiveLink] = useState(""); // Track the active link
 
@@ -27,17 +27,15 @@ function Navbar() {
 
   return (
     <nav
-      className="navbar navbar-expand-lg  "
+      className="navbar navbar-expand-lg navbar-custom"
       style={{
         paddingLeft: "10rem",
         height: "4.3rem",
-
         backgroundColor: "white",
-
         borderBottom: "1px solid #eaeaea", // Light gray border
       }}
     >
-      <div className="container-fluid mx-auto ">
+      <div className="container-fluid mx-auto">
         <Link
           className="navbar-brand"
           to="#"
@@ -60,14 +58,14 @@ function Navbar() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse " id="navbarNav">
+        <div className="collapse navbar-collapse" id="navbarNav">
           <ul
             className="navbar-nav mx-auto"
             style={{ fontFamily: "sans-serif" }}
           >
             {user ? (
               <>
-                <li className="nav-item " style={{ marginTop: "0rem" }}>
+                <li className="nav-item dropdown">
                   <Link
                     className="nav-link"
                     to="/research"
@@ -75,7 +73,7 @@ function Navbar() {
                     onClick={() => handleLinkClick("research")}
                   >
                     <i
-                      className="fa-solid fa-magnifying-glass mx-1 "
+                      className="fa-solid fa-magnifying-glass mx-1"
                       style={{
                         color: activeLink === "research" ? "#1D4ED8" : "gray",
                         marginRight: "0.3rem",
@@ -84,7 +82,7 @@ function Navbar() {
                     Research
                   </Link>
                 </li>
-                <li className="nav-item ">
+                <li className="nav-item dropdown">
                   <Link
                     className="nav-link active"
                     to="/notes"
@@ -100,7 +98,7 @@ function Navbar() {
                     My Notes
                   </Link>
                 </li>
-                <li className="nav-item ">
+                <li className="nav-item dropdown">
                   <Link
                     className="nav-link active"
                     to="/template"
@@ -108,7 +106,7 @@ function Navbar() {
                     onClick={() => handleLinkClick("template")}
                   >
                     <i
-                      className="fa-solid fa-clipboard mx-1 "
+                      className="fa-solid fa-clipboard mx-1"
                       style={{
                         color: activeLink === "template" ? "#1D4ED8" : "gray",
                       }}
@@ -116,7 +114,7 @@ function Navbar() {
                     Templates
                   </Link>
                 </li>
-                <li className="nav-item   ">
+                <li className="nav-item dropdown">
                   <Link
                     className="nav-link active"
                     to="/client"
@@ -133,7 +131,7 @@ function Navbar() {
                     Clients
                   </Link>
                 </li>
-                <li className="nav-item ">
+                <li className="nav-item dropdown">
                   <Link
                     className="nav-link active"
                     to="/calendar"
@@ -141,7 +139,7 @@ function Navbar() {
                     onClick={() => handleLinkClick("calendar")}
                   >
                     <i
-                      className="fa-regular fa-calendar-days mx-1 "
+                      className="fa-regular fa-calendar-days mx-1"
                       style={{
                         color: activeLink === "calendar" ? "#1D4ED8" : "gray",
                         marginRight: "0.3rem",
@@ -150,7 +148,7 @@ function Navbar() {
                     Calendar
                   </Link>
                 </li>
-                <li className="nav-item ">
+                <li className="nav-item dropdown">
                   <Link
                     className="nav-link active"
                     to="/email"
@@ -173,19 +171,18 @@ function Navbar() {
                   }}
                 >
                   <Link
-                    className="btn btn-secondary "
+                    className="btn btn-secondary"
                     to="#"
                     role="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                     style={{
                       backgroundColor: "white",
-
                       border: "none",
                     }}
                   >
                     <i
-                      className="fa-solid fa-gear "
+                      className="fa-solid fa-gear"
                       style={{
                         color: "black",
                         fontSize: "1.3rem",
@@ -211,32 +208,6 @@ function Navbar() {
               <li className="nav-item"></li>
             )}
           </ul>
-          {user && (
-            <div className="d-flex align-items-center">
-              <div
-                className="border"
-                style={{
-                  marginRight: "10rem",
-                  borderRadius: "1rem",
-                  backgroundColor: "#F5F5F5",
-                }}
-              >
-                <img
-                  src={loggedInUserName.user.profilePic || "https://via.placeholder.com/40"} 
-                  alt="Profile"
-                  className="rounded-circle "
-                  style={{
-                    width: "40px",
-                    height: "38px",
-                    objectFit: "cover",
-                  }}
-                />
-                <span className="me-3 mx-2">{user.name}</span>
-              </div>
-
-              {console.log(user.profilePic)}
-            </div>
-          )}
         </div>
       </div>
     </nav>
