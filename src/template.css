@@ -1,58 +1,68 @@
-/* Resize and center input and textarea */
+/* ====================================
+   Responsive Styles for Inputs, Textarea & Buttons
+   ==================================== */
 
-/* When max-width is 1440px */
-@media (max-width: 1440px) {
+/* For medium screens (768px to 1440px) */
+@media (min-width: 768px) and (max-width: 1440px) {
+  /* Ensure the container centers its children */
   .container {
+    display: flex; /* In case it's not defined already */
     flex-direction: column;
     align-items: center;
   }
 
+  /* Main content area adjustments */
   .col-9 {
     width: 80%;
     padding: 1rem;
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
   }
 
-  /* Center and adjust the width of the textarea */
+  /* Adjust the textarea to be centered and responsive */
   textarea {
     margin-left: 0;
-    width: 100%; /* Full width for better responsiveness */
-    max-width: 500px; /* Limit width for larger screens */
+    width: 100%; /* Full width for responsiveness */
+    max-width: 500px; /* Limit width on larger screens */
   }
 
-  /* Center the buttons and arrange them in a column with spacing */
+  /* Button container: stack buttons vertically and center them */
   .button {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center horizontally */
-    gap: 1rem; /* Add spacing between the buttons */
-    margin-top: 1rem; /* Add spacing above the buttons */
+    align-items: center;
+    gap: 1rem; /* Spacing between buttons */
+    margin-top: 1rem; /* Spacing above the buttons */
   }
 
+  /* Individual buttons with a fixed width */
   .button button {
-    width: 150px; /* Set a fixed width for buttons */
-    padding: 10px; /* Add padding to buttons */
+    width: 150px;
+    padding: 10px;
   }
 }
 
 /* For smaller devices (max-width: 768px) */
 @media (max-width: 768px) {
+  /* Slightly wider main content area */
   .col-9 {
     width: 95%;
   }
 
+  /* Ensure the textarea spans full available width */
   textarea {
-    max-width: 100%;
     width: 100%;
+    max-width: 100%;
   }
 
+  /* Reduce spacing between buttons on smaller screens */
   .button {
-    gap: 0.5rem; /* Less spacing between buttons on smaller screens */
+    gap: 0.5rem;
   }
 
+  /* Make buttons take full width for easy tapping */
   .button button {
-    width: 100%; /* Make buttons take full width */
+    width: 100%;
   }
 }
