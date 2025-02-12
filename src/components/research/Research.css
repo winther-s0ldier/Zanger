@@ -1,149 +1,235 @@
+/* Base Styles */
 .research-container {
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-    font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+  background-color: #0056b3;
+}
+
+.search-bar button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Sections */
+.updates-section,
+.priority-tasks,
+.recent-updates,
+.add-task {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.updates-section {
+  background-color: #f9f9f9;
+}
+
+.updates-section h3,
+.priority-tasks h3,
+.recent-updates h3,
+.add-task h3 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.updates-section p,
+.priority-tasks li span,
+.recent-updates li span {
+  color: #666;
+  font-size: 14px;
+}
+
+.priority-tasks ul,
+.recent-updates ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.priority-tasks li,
+.recent-updates li {
+  background-color: #f9f9f9;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.priority-tasks li strong,
+.recent-updates li strong {
+  display: block;
+  color: #333;
+  font-size: 16px;
+}
+
+.recent-updates li p {
+  color: #444;
+  margin: 5px 0;
+}
+
+/* Task Input */
+.task-input {
+  display: flex;
+  gap: 10px;
+}
+
+.task-input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.task-input button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.task-input button:hover {
+  background-color: #218838;
+}
+
+/* Responsive Styles */
+
+/* Small Screens (Up to 767px) */
+@media (max-width: 767px) {
+  .research-container {
+    padding: 10px;
+    max-width: 100%;
+    margin: 0 10px;
   }
-  
-  h2 {
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
+
   .search-bar {
-    display: flex;
-    margin-bottom: 20px;
+    flex-direction: column;
   }
-  
+
   .search-bar input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-right: 10px;
-    font-size: 16px;
+    margin-right: 0;
+    margin-bottom: 10px;
   }
-  
+
   .search-bar button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
+    width: 100%;
   }
-  
-  .search-bar button:hover {
-    background-color: #0056b3;
-  }
-  
-  .search-bar button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  
-  .updates-section {
-    background-color: #f9f9f9;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-  }
-  
-  .updates-section h3 {
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .updates-section p {
-    color: #666;
-    margin: 0;
-  }
-  
+
+  .updates-section,
   .priority-tasks,
-  .recent-updates {
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-  }
-  
-  .priority-tasks h3,
-  .recent-updates h3 {
-    color: #333;
-    margin-bottom: 15px;
-  }
-  
-  .priority-tasks ul,
-  .recent-updates ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .priority-tasks li,
-  .recent-updates li {
-    background-color: #f9f9f9;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-  }
-  
-  .priority-tasks li strong,
-  .recent-updates li strong {
-    display: block;
-    color: #333;
-    font-size: 16px;
-  }
-  
-  .priority-tasks li span,
-  .recent-updates li span {
-    color: #666;
-    font-size: 14px;
-  }
-  
-  .recent-updates li p {
-    color: #444;
-    margin: 5px 0;
-  }
-  
+  .recent-updates,
   .add-task {
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-  }
-  
-  .add-task h3 {
-    color: #333;
+    padding: 10px;
     margin-bottom: 15px;
   }
-  
+
   .task-input {
-    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .task-input input,
+  .task-input button {
+    width: 100%;
+  }
+}
+
+/* Medium to Large Screens (768px to 1440px) */
+@media (min-width: 768px) and (max-width: 1440px) {
+  .research-container {
+    padding: 20px;
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .search-bar {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .search-bar input {
+    margin-right: 10px;
+    flex: 1;
+  }
+
+  .search-bar button {
+    width: auto;
+  }
+
+  .updates-section,
+  .priority-tasks,
+  .recent-updates,
+  .add-task {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .task-input {
+    flex-direction: row;
     gap: 10px;
   }
-  
+
   .task-input input {
     flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
   }
-  
+
   .task-input button {
-    padding: 10px 20px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
+    width: auto;
   }
-  
-  .task-input button:hover {
-    background-color: #218838;
+}
+
+/* Large Screens (Above 1440px) */
+@media (min-width: 1441px) {
+  .research-container {
+    max-width: 1200px;
   }
+
+  .search-bar {
+    justify-content: space-between;
+  }
+
+  .task-input {
+    max-width: 600px;
+  }
+}
