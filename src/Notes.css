@@ -1,6 +1,7 @@
 .mb-3 {
-  margin-left: 3rem;
-  margin-right: 3rem;
+  margin-left: 10%;
+
+  width: 80%;
 }
 
 /* When max-width is 1440px */
@@ -65,11 +66,8 @@
     cursor: pointer;
   }
   .mb-3 {
-    display: flex;
-    justify-content: center;
-  }
-  textarea {
-    width: 50%;
+    margin-left: 28%;
+    width: 100%;
   }
 }
 
