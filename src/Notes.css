@@ -1,58 +1,72 @@
+/* =========================
+   Base Styles (Large Screens)
+   ========================= */
+
+/* This utility class is used to add margin-bottom and adjust width */
 .mb-3 {
   width: 90%;
   margin-left: 5%;
 }
 
-/* When max-width is 1440px */
-@media (max-width: 1440px) {
+/* =========================
+   Responsive Styles
+   ========================= */
+
+/* For medium screens between 768px and 1440px */
+@media (min-width: 768px) and (max-width: 1440px) {
+  /* Adjust main container layout */
   .container {
-    flex-direction: column; /* Stack sidebar and content */
-    align-items: center; /* Center horizontally */
+    display: flex;
+    flex-direction: column; /* Stack sidebar and content vertically */
+    align-items: center; /* Center content horizontally */
   }
 
+  /* Make both columns span full width by default */
   .col-3,
   .col-9 {
     flex-basis: 100%;
-    margin-left: 0;
-    margin-right: 0;
+    margin: 0;
   }
 
-  /* Center the left panel and notes vertically and horizontally */
+  /* Left sidebar (col-3) adjustments */
   .col-3 {
     display: flex;
-    flex-direction: column; /* Stack the items in column fashion */
+    flex-direction: column; /* Stack items vertically */
     align-items: center; /* Center content horizontally */
     justify-content: flex-start; /* Align items to the top */
     margin-bottom: 1rem;
-    width: 100%; /* Full width of the container */
+    width: 100%;
   }
 
+  /* Main content area (col-9) adjustments */
   .col-9 {
-    width: 50%; /* Adjust the width of the content */
-
+    width: 50%; /* Adjust width to take half of the container */
     display: flex;
-    justify-content: center; /* Center main content */
-    flex-direction: column; /* Stack the content */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center the main content vertically */
+    margin: 0 auto; /* Center the column within the container */
   }
 
-  /* Notes section */
+  /* Notes section container */
   .mt-4 {
     display: flex;
-    flex-direction: column; /* Arrange notes in column fashion */
-    align-items: center; /* Center the notes horizontally */
-    width: 100%; /* Make it take full width */
+    flex-direction: column; /* Arrange notes in a column */
+    align-items: center; /* Center notes horizontally */
+    width: 100%;
   }
 
+  /* Card component styling */
   .card {
-    width: 100%; /* Ensure cards take up full width */
-    max-width: 18rem; /* Limit the maximum width */
-    margin-bottom: 1rem; /* Add spacing between notes */
+    width: 100%; /* Full width within its parent */
+    max-width: 18rem; /* Limit maximum width for consistency */
+    margin-bottom: 1rem; /* Spacing between cards */
   }
 
+  /* Card body layout */
   .card-body {
     display: flex;
-    justify-content: space-between;
-    align-items: center; /* Center content inside each card */
+    justify-content: space-between; /* Distribute space between elements */
+    align-items: center; /* Center content vertically */
     padding: 0.5rem;
   }
 
@@ -64,26 +78,26 @@
     margin-left: 1rem;
     cursor: pointer;
   }
+
+  /* Refined .mb-3 adjustments for medium screens */
   .mb-3 {
     width: 100%;
-    margin-left: 23%;
+    margin-left: 15%;
   }
 }
 
-/* Adjustments for smaller screens for better appearance */
+/* For smaller screens (up to 768px) */
 @media (max-width: 768px) {
+  /* Ensure cards use full available width */
   .card {
     width: 100%;
     max-width: 100%;
   }
 
-  .form-control {
-    width: 100%;
-    font-size: 1rem;
-  }
-
+  /* Form controls and textareas adapt to smaller widths */
+  .form-control,
   textarea {
     width: 100%;
-    max-width: 100%;
+    font-size: 1rem;
   }
 }
