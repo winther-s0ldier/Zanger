@@ -5,43 +5,43 @@ export default function Template() {
   const [data, setdata] = useState([
     {
       id: 1,
-      template: "Assignment of Copyright",
+      template: "AssignmentofCopyright",
       content: "Template of Legal Agreement",
       icon: "fa-copyright",
     },
     {
       id: 2,
-      template: "Consultancy Agreement",
+      template: "ConsultancyAgreement",
       content: "Write the content you want to fill",
       icon: "fa-gavel",
     },
     {
       id: 3,
-      template: "Distribution Agreement",
+      template: "DistributionAgreement",
       content: "Write the content of client letter",
       icon: "fa-envelope",
     },
     {
       id: 4,
-      template: "Foreign Trade Contract",
+      template: "ForeignTradeContract",
       content: "Write the content of Legal Notice",
       icon: "fa-exclamation-circle",
     },
     {
       id: 5,
-      template: "Power of Attorney",
+      template: "PowerofAttorney",
       content: "Write the template of Power of Attorney",
       icon: "fa-file-signature",
     },
     {
       id: 6,
-      template: "Commission Agreement",
+      template: "CommissionAgreement",
       content: "Write the template of Settle Agreement",
       icon: "fa-handshake",
     },
     {
       id: 7,
-      template: "Manufacturing Agreement",
+      template: "ManufacturingAgreement",
       content: "Write the template of Settle Agreement",
       icon: "fa-handshake",
     }
