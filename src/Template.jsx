@@ -11,19 +11,19 @@ export default function Template() {
     },
     {
       id: 2,
-      template: "Court Filing",
+      template: "Consultancy Agreement",
       content: "Write the content you want to fill",
       icon: "fa-gavel",
     },
     {
       id: 3,
-      template: "Client Letter",
+      template: "Distribution Agreement",
       content: "Write the content of client letter",
       icon: "fa-envelope",
     },
     {
       id: 4,
-      template: "Legal Notice",
+      template: "Foreign Trade Contract",
       content: "Write the content of Legal Notice",
       icon: "fa-exclamation-circle",
     },
@@ -35,10 +35,16 @@ export default function Template() {
     },
     {
       id: 6,
-      template: "Settle Agreement",
+      template: "Commission Agreement",
       content: "Write the template of Settle Agreement",
       icon: "fa-handshake",
     },
+    {
+      id: 7,
+      template: "Manufacturing Agreement",
+      content: "Write the template of Settle Agreement",
+      icon: "fa-handshake",
+    }
   ]);
   const [currtemplate, setcurrenttemplate] = useState(null);
 
