@@ -1,8 +1,8 @@
 // src/components/research/Research.jsx
-import { useState, useEffect, useRef, useMemo } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useAuth } from "../../context/AuthContext";
 import AddTaskModal from "./AddTaskModal";
-import FilesList from "./FilesList";
+
 
 function Research() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -11,13 +11,11 @@ function Research() {
   const [priorityTasks, setPriorityTasks] = useState([]);
   const [loading, setLoading] = useState(false);
   const [showAddTask, setShowAddTask] = useState(false);
-  const [uploading, setUploading] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [searchFilters, setSearchFilters] = useState({
     local: true,
     web: true,
   });
-  const fileInputRef = useRef(null);
   const { user } = useAuth();
 
   // Close dropdown when clicking outside
@@ -93,41 +91,6 @@ function Research() {
       setPriorityTasks(data);
     } catch (error) {
       console.error("Error fetching tasks:", error);
-    }
-  };
-
-  // Handle file upload
-  const handleFileUpload = async (event) => {
-    const file = event.target.files[0];
-    if (!file) return;
-
-    setUploading(true);
-    const formData = new FormData();
-    formData.append("file", file);
-
-    try {
-      const response = await fetch("https://first-work-2.onrender.com/api/upload", {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${user.token}`,
-        },
-        body: formData,
-      });
-
-      if (!response.ok) throw new Error("Upload failed");
-
-      // Trigger a new search if there's a current search query
-      if (searchQuery.length >= 3) {
-        handleSearch();
-      }
-    } catch (error) {
-      console.error("Upload error:", error);
-    } finally {
-      setUploading(false);
-      // Reset file input
-      if (fileInputRef.current) {
-        fileInputRef.current.value = "";
-      }
     }
   };
 
@@ -298,7 +261,7 @@ function Research() {
   const RecentUpdateItem = ({ update }) => (
     <div key={update._id} className="d-flex align-items-start mb-4">
       <div className="bg-light rounded-circle p-2 me-3">
-        <i className={`far fa-file-alt text-primary`}></i>
+        <i className="far fa-file-alt text-primary"></i>
       </div>
       <div className="flex-grow-1">
         <h6 className="mb-1">{update.title}</h6>
@@ -340,7 +303,6 @@ function Research() {
       </div>
     </div>
   );
-
   return (
     <div
       style={{
@@ -350,7 +312,7 @@ function Research() {
       }}
     >
       <div className="container-fluid px-4">
-        {/* Search Box and File Upload */}
+        {/* Search Box */}
         <div className="my-4">
           <div className="input-group">
             <span
@@ -377,31 +339,6 @@ function Research() {
                 boxShadow: "0 4px 15px rgba(128, 128, 128, 0.1)",
               }}
             />
-            <input
-              type="file"
-              ref={fileInputRef}
-              className="d-none"
-              onChange={handleFileUpload}
-            />
-            <button
-              className="btn btn-outline-primary"
-              onClick={() => fileInputRef.current?.click()}
-              disabled={uploading}
-              style={{
-                boxShadow: "0 4px 15px rgba(128, 128, 128, 0.1)",
-              }}
-            >
-              {uploading ? (
-                <span
-                  className="spinner-border spinner-border-sm me-2"
-                  role="status"
-                  aria-hidden="true"
-                ></span>
-              ) : (
-                <i className="fas fa-upload me-2"></i>
-              )}
-              Upload File
-            </button>
           </div>
         </div>
 
@@ -703,12 +640,7 @@ function Research() {
           </div>
         </div>
 
-        {/* Files Section */}
-        <div className="card mb-4 mt-4 shadow border-0">
-          <div className="card-body">
-            <FilesList />
-          </div>
-        </div>
+        
 
         {/* Add Task Modal */}
         <AddTaskModal
