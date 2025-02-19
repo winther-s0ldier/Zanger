@@ -148,22 +148,7 @@ function Navbar() {
                     Calendar
                   </Link>
                 </li>
-                <li className="nav-item dropdown">
-                  <Link
-                    className="nav-link active"
-                    to="/email"
-                    style={getLinkStyle("email")}
-                    onClick={() => handleLinkClick("email")}
-                  >
-                    <i
-                      className="fa-solid fa-envelope mx-1"
-                      style={{
-                        color: activeLink === "email" ? "#1D4ED8" : "gray",
-                      }}
-                    ></i>
-                    Email
-                  </Link>
-                </li>
+                
                 <div
                   className="dropdown"
                   style={{
