@@ -50,7 +50,7 @@ export default function Template() {
 
   const handleTemplateClick = (template) => {
     setcurrenttemplate(template);
-    if (template.template === "Assignment of Copyright") {
+    if (template.template === "AssignmentofCopyright") {
       window.open("https://zanger.onrender.com/", "_blank");
     }
   };
