@@ -5,53 +5,60 @@ export default function Template() {
   const [data, setdata] = useState([
     {
       id: 1,
-      template: "AssignmentofCopyright",
+      template: "Assignment of Copyright",
       content: "Template of Legal Agreement",
       icon: "fa-copyright",
+      link: "https://zanger.onrender.com/"
     },
     {
       id: 2,
-      template: "ConsultancyAgreement",
+      template: "Consultancy Agreement",
       content: "Write the content you want to fill",
       icon: "fa-gavel",
+      link: "https://zanger.onrender.com/consultancy_agreement" // Placeholder link
     },
     {
       id: 3,
-      template: "DistributionAgreement",
+      template: "Distribution Agreement",
       content: "Write the content of client letter",
       icon: "fa-envelope",
+      link: "#" // Placeholder link
     },
     {
       id: 4,
-      template: "ForeignTradeContract",
+      template: "Foreign TradeContract",
       content: "Write the content of Legal Notice",
       icon: "fa-exclamation-circle",
+      link: "#" // Placeholder link
     },
     {
       id: 5,
-      template: "PowerofAttorney",
+      template: "Power of Attorney",
       content: "Write the template of Power of Attorney",
       icon: "fa-file-signature",
+      link: "#" // Placeholder link
     },
     {
       id: 6,
-      template: "CommissionAgreement",
+      template: "Commission Agreement",
       content: "Write the template of Settle Agreement",
       icon: "fa-handshake",
+      link: "#" // Placeholder link
     },
     {
       id: 7,
-      template: "ManufacturingAgreement",
+      template: "Manufacturing Agreement",
       content: "Write the template of Settle Agreement",
       icon: "fa-handshake",
+      link: "#" // Placeholder link
     }
   ]);
   const [currtemplate, setcurrenttemplate] = useState(null);
 
   const handleTemplateClick = (template) => {
     setcurrenttemplate(template);
-    if (template.template === "AssignmentofCopyright") {
-      window.open("https://zanger.onrender.com/", "_blank");
+    if (template.link !== "#") {
+      window.open(template.link, "_blank");
     }
   };
 
@@ -69,10 +76,7 @@ export default function Template() {
           <div key={template.id} className="col-md-4">
             <div 
               className="card h-100 border-0 shadow-sm"
-              style={{ 
-                cursor: "pointer",
-                transition: "transform 0.2s ease, box-shadow 0.2s ease",
-              }}
+              style={{ cursor: "pointer", transition: "transform 0.2s ease, box-shadow 0.2s ease" }}
               onClick={() => handleTemplateClick(template)}
               onMouseOver={(e) => {
                 e.currentTarget.style.transform = "translateY(-5px)";
@@ -87,14 +91,7 @@ export default function Template() {
                 <div className="d-flex align-items-center mb-3">
                   <div 
                     className="rounded-circle p-3 me-3"
-                    style={{ 
-                      backgroundColor: "rgba(13, 110, 253, 0.1)",
-                      width: "48px",
-                      height: "48px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center"
-                    }}
+                    style={{ backgroundColor: "rgba(13, 110, 253, 0.1)", width: "48px", height: "48px", display: "flex", alignItems: "center", justifyContent: "center" }}
                   >
                     <i className={`fas ${template.icon} text-primary fs-5`}></i>
                   </div>
@@ -117,8 +114,6 @@ export default function Template() {
           </div>
         ))}
       </div>
-
-      
     </div>
   );
 }
