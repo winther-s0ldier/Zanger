@@ -21,7 +21,7 @@ const EditClientModal = ({ client, onClose, onUpdate }) => {
     e.preventDefault();
     try {
       const updatedClient = await axios.put(
-        `http://54.167.18.161/api/clients/update/${client.id}`,
+        `http://54.234.253.93/api/clients/update/${client.id}`,
         formData
       );
       onUpdate(updatedClient.data); // Inform parent to update the table
