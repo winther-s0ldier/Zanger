@@ -37,7 +37,7 @@ function Navbar() {
     >
       <div className="container-fluid mx-auto">
          <img
-          src="/WhatsApp Image 2025-02-20 at 16.58.31_db5530d2.jpg"
+          src="/lexlogo.jpg"
           alt="Logo"
           width={130}
           height={100}
