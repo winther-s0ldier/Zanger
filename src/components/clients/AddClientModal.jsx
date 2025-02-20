@@ -17,7 +17,7 @@ const AddClientModal = ({ onClose, onAdd }) => {
 
     try {
       const response = await axios.post(
-        "http://54.167.18.161/api/clients/add", // Replace with actual API endpoint
+        "http://54.234.253.93/api/clients/add", // Replace with actual API endpoint
         formData
       );
 
