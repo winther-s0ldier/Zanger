@@ -38,7 +38,7 @@ function Research() {
   const handleDeleteTask = async (taskId) => {
     try {
       const response = await fetch(
-       `http://54.167.18.161/api/tasks/${taskId}`,
+       `http://54.234.253.93/api/tasks/${taskId}`,
         {
           method: "DELETE",
           headers: {
@@ -59,7 +59,7 @@ function Research() {
   const handleDeleteUpdate = async (updateId) => {
     try {
       const response = await fetch(
-        `http://54.167.18.161/api/updates/${updateId}`,
+        `http://54.234.253.93/api/updates/${updateId}`,
         {
           method: "DELETE",
           headers: {
@@ -81,7 +81,7 @@ function Research() {
   // Fetch priority tasks
   const fetchPriorityTasks = async () => {
     try {
-      const response = await fetch("http://54.167.18.161/api/tasks", {
+      const response = await fetch("http://54.234.253.93/api/tasks", {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
@@ -101,7 +101,7 @@ function Research() {
 
     try {
       const response = await fetch(
-        `http://54.167.18.161/api/updates/recent?email=${loggedinuser.user.email}`,
+        `http://54.234.253.93/api/updates/recent?email=${loggedinuser.user.email}`,
         {
           headers: {
             Authorization: `Bearer ${loggedinuser.token}`,
@@ -120,7 +120,7 @@ function Research() {
   // Handle adding new task
   const handleAddTask = async (taskData) => {
     try {
-      const response = await fetch("http://54.167.18.161/api/tasks", {
+      const response = await fetch("http://54.234.253.93/api/tasks", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -156,7 +156,7 @@ function Research() {
 
     setLoading(true);
     try {
-      const response = await fetch("http://54.167.18.161/api/search", {
+      const response = await fetch("http://54.234.253.93/api/search", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -492,7 +492,7 @@ function Research() {
                                     onClick={() => {
                                       if (result.type === "File") {
                                         window.open(
-                                          `http://54.167.18.161/uploads/${result.path}`
+                                          `http://54.234.253.93/uploads/${result.path}`
                                         );
                                       } else if (
                                         result.type === "Web" &&
