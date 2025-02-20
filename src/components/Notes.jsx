@@ -10,7 +10,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get(`http://54.167.18.161/data?username=${loggedInUserName.user.email}`)
+      .get(`http://54.234.253.93/data?username=${loggedInUserName.user.email}`)
       .then((res) => {
         setnotes(res.data);
         setcurrentnote(res.data[0] || null);
@@ -43,7 +43,7 @@ function App() {
                     author: loggedInUserName.user.email,
                   };
 
-                  await axios.post("http://54.167.18.161/add", newNote);
+                  await axios.post("http://54.234.253.93/add", newNote);
 
                   setnotes([...notes, newNote]);
                   setcurrentnote(newNote);
@@ -81,7 +81,7 @@ function App() {
                         setnotes(notes.filter((n) => n.id !== note.id));
                         setcurrentnote(null);
                         await axios.delete(
-                          `http://54.167.18.161/delete/${note.id}`,
+                          `http://54.234.253.93/delete/${note.id}`,
                           currnote
                         );
                       }}
@@ -121,7 +121,7 @@ function App() {
                         )
                       );
                       await axios.put(
-                        `http://54.167.18.161/update/${currnote.id}`,
+                        `http://54.234.253.93/update/${currnote.id}`,
                         currnote
                       );
                     }
@@ -166,7 +166,7 @@ function App() {
                       )
                     );
                     await axios.put(
-                      `http://54.167.18.161/update/${currnote.id}`,
+                      `http://54.234.253.93/update/${currnote.id}`,
                       currnote
                     );
                   }
