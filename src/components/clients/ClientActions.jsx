@@ -18,7 +18,7 @@ const ClientActions = ({ client, onEdit, onDelete }) => {
   const handleDelete = () => {
     if (window.confirm("Are you sure you want to delete this client?")) {
       axios
-        .delete(`http://54.167.18.161/api/clients/delete/${client.id}`)
+        .delete(`http://54.234.253.93/api/clients/delete/${client.id}`)
         .then(() => {
           onDelete(client.id);
         })
