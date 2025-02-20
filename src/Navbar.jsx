@@ -36,17 +36,13 @@ function Navbar() {
       }}
     >
       <div className="container-fluid mx-auto">
-        <Link
-          className="navbar-brand"
-          to="#"
-          style={{
-            fontFamily: "sans-serif",
-            color: "#11827",
-            fontWeight: 600,
-          }}
-        >
-          LexAI Assistant
-        </Link>
+         <img
+          src="/WhatsApp Image 2025-02-20 at 16.58.31_db5530d2.jpg"
+          alt="Logo"
+          width={130}
+          height={100}
+        />
+
         <button
           className="navbar-toggler"
           type="button"
