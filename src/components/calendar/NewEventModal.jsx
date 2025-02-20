@@ -23,7 +23,7 @@ const NewEventModal = ({ onClose, onSave }) => {
 
   const fetchClients = async () => {
     try {
-      const response = await axios.get('https://first-work-2.onrender.com/api/clients', {
+      const response = await axios.get('http://54.167.18.161/api/clients', {
         headers: {
           Authorization: `Bearer ${user.token}`
         }
