@@ -28,7 +28,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const response = await fetch("http://54.234.253.93/api/auth/login", {
+      const response = await fetch("http://54.85.178.85/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -55,7 +55,7 @@ export const AuthProvider = ({ children }) => {
     try {
       console.log("Google login data:", userInfo);
 
-      const response = await fetch("http://54.234.253.93/api/auth/google", {
+      const response = await fetch("http://54.85.178.85/api/auth/google", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(userInfo),
@@ -75,7 +75,7 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (name, email, password) => {
     try {
-      const response = await fetch("http://54.234.253.93/api/auth/register", {
+      const response = await fetch("http://54.85.178.85/api/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
