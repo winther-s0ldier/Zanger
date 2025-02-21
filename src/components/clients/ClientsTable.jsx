@@ -46,7 +46,7 @@ const ClientsTable = () => {
   useEffect(() => {
     axios
       .get(
-        `http://54.234.253.93/api/clients?user=${loggedInUserName.user.email}`
+        `http://54.85.178.85/api/clients?user=${loggedInUserName.user.email}`
       )
       .then(async (res) => {
         setTableData(res.data);
@@ -138,7 +138,7 @@ const ClientsTable = () => {
             onAdd={async (newClient) => {
               newClient.created_by = loggedInUserName.user.email;
               await axios.post(
-                "http://54.234.253.93/api/clients/add",
+                "http://54.85.178.85/api/clients/add",
                 newClient
               );
               setTableData([...tableData, newClient]);
