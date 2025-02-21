@@ -23,7 +23,7 @@ const NewEventModal = ({ onClose, onSave }) => {
 
   const fetchClients = async () => {
     try {
-      const response = await axios.get('http://54.234.253.93/api/clients', {
+      const response = await axios.get('http://54.85.178.85/api/clients', {
         headers: {
           Authorization: `Bearer ${user.token}`
         }
