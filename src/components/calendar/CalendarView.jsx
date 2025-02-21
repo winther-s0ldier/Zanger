@@ -21,7 +21,7 @@ const CalendarView = () => {
   const fetchEvents = async () => {
     try {
       console.log('Fetching events...');
-      const response = await axios.get("http://54.234.253.93/api/calendar", {
+      const response = await axios.get("http://54.85.178.85/api/calendar", {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
@@ -41,7 +41,7 @@ const CalendarView = () => {
       console.log('Attempting to create event with data:', eventData);
       
       const response = await axios.post(
-        "http://54.234.253.93/api/calendar",
+        "http://54.85.178.85/api/calendar",
         eventData,
         {
           headers: {
@@ -65,7 +65,7 @@ const CalendarView = () => {
 
   const handleDelete = async (eventId) => {
     try {
-      await axios.delete(`http://54.234.253.93/api/calendar/${eventId}`, {
+      await axios.delete(`http://54.85.178.85/api/calendar/${eventId}`, {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
@@ -80,7 +80,7 @@ const CalendarView = () => {
   const handleGoogleSync = async () => {
     try {
       const response = await axios.post(
-        "http://54.234.253.93/api/auth/google/calendar/url",
+        "http://54.85.178.85/api/auth/google/calendar/url",
         {},
         {
           headers: {
