@@ -30,7 +30,7 @@ function Navbar() {
       className="navbar navbar-expand-lg navbar-custom"
       style={{
         paddingLeft: "10rem",
-        height: "4.3rem",
+        height: "5.7rem",
         backgroundColor: "white",
         borderBottom: "1px solid #eaeaea", // Light gray border
       }}
@@ -40,7 +40,7 @@ function Navbar() {
           src="/lexlogo.jpg"
           alt="Logo"
           width={130}
-          height={100}
+          height={90}
         />
 
         <button
